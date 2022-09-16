@@ -1,4 +1,3 @@
-# %%
 import os
 from webbrowser import get
 import fontTools.ttLib as tt
@@ -6,7 +5,6 @@ from typing import List
 import string
 import shutil
 
-# %%
 os.chdir(r'***\Temp')
 
 def get_dirlists():
@@ -33,19 +31,12 @@ def get_needed_dir(direc: List) -> List:
 needed_dir = get_needed_dir(len16_dirl)
 truly_needed_file = get_needed_dir(needed_dir)
 
-# %%
 if os.path.exists('out')==False:
     os.mkdir('out')
 for i,files in enumerate(truly_needed_file):
     shutil.copy(files, f'out\\file{i}.otf')
 
-# %%
 os.chdir('out')
-
-
-# %%
-
-from tokenize import Name
 
 def is_Chinese(word):
     for ch in word:
@@ -76,9 +67,3 @@ for ttf in unnamed_fonts_list:
                 name = i
                 break
         os.rename(ttf, f'{name}.otf')
-        
-
-# %%
-
-
-
